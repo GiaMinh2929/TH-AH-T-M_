@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int isPerfectSquare(int num) {
+    int sqrtNum = sqrt(num);
+    return (sqrtNum * sqrtNum == num);
+}
+
+void printPerfectSquares(int n) {
+    int count = 0;
+    printf("Cac so chinh phuong nho hon %d la: ", n);
+    for (int i = 1; i < n; ++i) {
+        if (isPerfectSquare(i)) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+    printf("\nTong so chinh phuong: %d\n", count);
+}
+
+int main() {
+    int n;
+    printf("Nhap so nguyen duong n: ");
+    scanf("%d", &n);
+    printPerfectSquares(n);
+    return 0;
+}
